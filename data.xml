@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students>
+  <stud>
+    <image>a.jpg</image>
+    <rno>1</rno>
+    <name>aaa</name>
+    <class>A</class>
+    <marks>99</marks>
+  </stud>
+  <stud>
+    <image>b.jpg</image>
+    <rno>2</rno>
+    <name>bbb</name>
+    <class>B</class>
+    <marks>80</marks>
+  </stud>
+  <stud>
+    <image>c.jpg</image>
+    <rno>3</rno>
+    <name>ccc</name>
+    <class>A</class>
+    <marks>90</marks>
+  </stud>
+</students>

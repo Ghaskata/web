@@ -1,0 +1,161 @@
+<html>
+  <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+<script>
+
+$(document).ready(function(){
+  var x=new XMLHttpRequest();
+  x.onload=function(){
+      s(this);
+      my(this);
+      myfunction(this);
+      fundiv(this);
+  }
+  
+  x.open('GET','data.xml',true);
+  x.send();
+});
+
+function s(data){
+  console.log("---------------s--------");
+   // console.log(data.responseText);
+    var xml=data.responseXML;
+    data=xml.getElementsByTagName('stud');
+      var img=data[0].getElementsByTagName('image')[0].childNodes[0].nodeValue;
+     console.log(img);
+    var display='<img src="'+img+'" alt="" >';
+     $("#image").append(display);
+     console.log("---------------");
+}
+
+
+
+
+
+
+function my(data){
+  console.log("---------my--------");
+   // console.log(data.responseText);
+    var xml=data.responseXML;
+    data=xml.getElementsByTagName('stud');
+    var m=$(xml).find('stud').text();
+    console.log(m);
+    console.log(data.length);
+    for(i=0;i<data.length;i++){
+      var rno=data[i].getElementsByTagName('rno')[0].childNodes[0].nodeValue;
+     var name=data[i].getElementsByTagName('name')[0].childNodes[0].nodeValue;
+     
+     console.log(rno);
+     console.log(name);
+     
+    }
+    console.log("---------------");
+}
+
+  /*$(document).ready(function (){
+    var x=new XMLHttpRequest();
+    x.onload=function (){
+      myfunction (this);
+      fundiv(this);
+      
+    }
+    x.open('GET','data.xml', true);
+    x.send();
+  });*/
+  
+  
+  function myfunction(data){
+    console.log("-------myfunction------");
+    console.log(data.responseText);
+      var xml=data.responseXML;
+      console.log(xml);
+      /*var stud=xml.getElementsByTagName('stud')[1].childNodes[0].nodeValue;
+    console.log(stud);*/
+    
+    var display="";
+    var length=$(xml).find('stud');
+    console.log("length :"+length);
+    
+    
+      $(xml).find('stud').each(function (){
+        
+        console.log($(this).find('rno').text());
+        console.log($(this).find('name').text());
+        display=`<tr>
+        <td>${$(this).find('rno').text()}</td>
+        <td>${$(this).find('name').text()}</td>
+        <td>${$(this).find('class').text()}</td>
+        <td>${$(this).find('marks').text()}</td>
+        </tr>
+        `;
+        $("table").append(display);
+        console.log("display:"+display);
+        
+      });
+      console.log("---------------");
+  }
+  
+  
+  
+  function fundiv(data){
+    console.log("---------fundiv-----");
+    console.log(data.responseText);
+    var obj=data.responseXML;
+    var display="";
+    $(obj).find('stud').each(function (){
+      display=`
+      <div class="col-4">
+        <div class="p-3 m-2 text-center justify-content-center align-items-center" style="border:1px solid black;">
+        <div class="m-auto">
+        <img src="${$(this).find('image').text()}"/>
+        </div>
+        <div class="card-body text-center">
+        <p>name: ${$(this).find('name').text()}</p>
+        <p>class : ${$(this).find('class').text()}</p>
+        <p>mark : ${$(this).find('marks').text()}</p>
+        <div>
+        </div>
+      </div>
+      `;
+      $(document).find('#d1').find('.row').append(display);
+    });
+    console.log("---------------");
+  }
+</script>
+
+  </head>
+  <body>
+    <center id="image">
+ 
+    </center>
+    
+    
+    
+    
+    
+    
+    <h2 class="text-center mt-4 text-warning mb-3" style="Font-family: cursive;">Student result</h2>
+      <table class="col-10 m-auto p-4 text-center table-bordered table-striped">
+        <tr>
+          <th>roll no</th>
+          <th>name</th>
+          <th>class</th>
+          <th> markst</th>
+        </tr>
+        
+      </table>
+      
+      <br>
+      <br>
+      <div class="container" id="d1">
+        <div class="row">
+          
+        </div>
+      </div>
+   
+  </body>
+</html>
+

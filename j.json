@@ -1,0 +1,24 @@
+[
+  {
+    "image":"p1.jpg",
+    "name":"pizza",
+    "price":"$123",
+    "description":"this is amazing pizza .pizza bring fentastic.this is amazing pizza .pizza bring fentastic.this is amazing pizza .pizza bring fentastic.",
+    "type":["chizz","chili","paneer"]
+  },
+  {
+    "image":"p2.jpg",
+    "name":"burgur",
+    "price":"$123",
+    "description":"this is amazing pizza .pizza bring fentastic.this is amazing pizza .pizza bring fentastic.this is amazing pizza .pizza bring fentastic.",
+    "type":["chil","chili","paneer"]
+  },
+  {
+    "image":"p3.jpg",
+    "name":"chips",
+    "price":"$123",
+    "description":"this is amazing pizza .pizza bring fentastic.this is amazing pizza .pizza bring fentastic.this is amazing pizza .pizza bring fentastic.",
+    "type":["chi3","chili","paneer"]
+  }
+  
+]

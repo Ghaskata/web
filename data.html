@@ -1,0 +1,44 @@
+<html>
+  <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+<script>
+$(document). ready (function (){
+  console.log(sessionStorage.getItem('myobject'));
+ console.log(JSON.parse(sessionStorage.getItem('myobject')));
+ var obj=JSON.parse(sessionStorage.getItem('myobject'));
+ 
+ $("#user").html(obj[0]);
+ $("#pass").html(obj[1]);
+ 
+ /*$.ajax({
+    url: 'j.json',
+    type: 'POST',
+    data: JSON.stringify(obj),
+    contentType: 'application/json; charset=utf-8',
+    dataType: 'json',
+    async: false,
+    success: function(msg) {
+        alert(msg);
+    }
+ });
+ */
+ 
+});
+</script>
+  </head>
+  <body>
+   <h2 class="text-center mt-5 mb-4">entered data</h2>
+   <div class="container col-4 m-auto p-5"style="border:1px solid black;">
+   <div class="d-flex justify-content-between">
+   <h5>user name : </h5><p id="user"></p>
+   </div>
+   <br>
+   <div class="d-flex justify-content-between">
+   <h5>password : </h5><p id="pass"></p>
+   </div>
+   </div>
+  </body>
+</html>

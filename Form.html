@@ -1,0 +1,100 @@
+<html>
+  <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  </head>
+  <body>
+    <div class="container align-items-center">
+      <h1 class="text-center mt-3 mb-3">form</h1>
+      <div class="col-10 m-auto d-block p-3" style="border:1px solid black;">
+        <form action="data.html"  method="get">
+          <div class="form-group">
+            <label for="uname">
+              user name :
+            </label>
+            <input type="text" class="form-control" id="uname" placeholder="enter name">
+            <H6 id="usererror"></H6>
+          </div>
+          <div class="form-group">
+            <label for="password">
+              password :
+            </label>
+            <input type="text" class="form-control" id="password" placeholder="enter password">
+            <H6 id="passerror"></H6>
+          </div>
+  
+  
+          <input type="submit" class="btn btn-primary mt-3" value="submit" id="submit">
+        </form>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function(){
+        $("usererror").hide();
+        $("#passerror").hide();
+        
+        var user_error=true;
+        var pass_error=true;
+        
+        $("#uname").keyup(function(){
+         user_vali();
+        });
+        function user_vali(){
+          var uname= $("#uname").val();
+         
+         if(uname.length<3){
+          $("#usererror").show();
+          $("#usererror").html("**enter valid name");
+          $("#usererror").css("color","red");
+          user_error=false;
+          return false;
+         }
+         else{
+          $("#usererror").hide();
+         }
+        }
+        
+        
+        $("#password").keyup(function(){
+         pass_vali();
+        });
+        function pass_vali(){
+          var pass= $("#password").val();
+         
+         if(pass.length<3){
+          $("#passerror").show();
+          $("#passerror").html("**enter valid password");
+          $("#passerror").css("color","red");
+          pass_error=false;
+          return false;
+         }
+         else{
+          $("#passerror").hide();
+         }
+        }
+        
+        $("#submit").click(function(){
+        user_error=true;
+        pass_error=true;
+        
+         user_vali();
+         pass_vali();
+         
+         if((user_error==true)&&(pass_error==true)){
+           var user=$("#uname").val();
+           var pass=$("#password").val();
+           
+           sessionStorage.setItem('myobject',JSON.stringify([user,pass]));
+           return true;
+         }
+         return false;
+        });
+        
+        
+      });
+      
+    </script>
+  </body>
+</html>
