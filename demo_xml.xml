@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<students>
+  <stud>
+    <rno>101</rno>
+    <name>Arpan</name>
+    <city>Surat</city>
+    <per>99.99%</per>
+  </stud>
+  <stud>
+    <rno>102</rno>
+    <name>Tamanna</name>
+    <city>Surat</city>
+    <per>99%</per>
+  </stud>
+  <stud>
+    <rno>103</rno>
+    <name>Archna</name>
+    <city>Surat</city>
+    <per>80%</per>
+  </stud>
+  <stud>
+    <rno>104</rno>
+    <name>Tarika</name>
+    <city>Surat</city>
+    <per>95%</per>
+  </stud>
+  <stud>
+    <rno>105</rno>
+    <name>Arpi</name>
+    <city>Surat</city>
+    <per>70%</per>
+  </stud>
+</students>

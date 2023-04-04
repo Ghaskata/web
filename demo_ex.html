@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+     
+   <style>
+     .nav-link{
+       color: black;
+       font-size: 1.3rem;
+       font-family:Courier New;
+     }
+     p{
+       color: #777;
+       font-size: 1.3rem;
+     }
+     .b{
+       background: linear-gradient(45deg,red, blue);
+       padding: 10px 20px;
+       border-radius:15px;
+       color: white;
+       font-size: 1.3rem;
+       border:none;
+     }
+     .procard-body{
+       position: absolute;
+       width:100%;
+       height:100%;
+       background-color:rgba(0,0,0,0.1); 
+       backdrop-filter: blur(5px);
+       border-radius:30px; 
+       top:0; 
+       right:-100%;
+       padding-top:50px;
+       padding-left: 20px;
+       display:flex;
+       flex-direction:column;
+       transition:1s;
+     }
+     .procard:hover .procard-body{
+       right: 0;
+     }
+     .procard{
+       width:90%;height:450px;position:relative;border-radius:30px; overflow:hidden;
+     }
+
+   </style>
+   
+</head>
+<section style="background:linear-gradient(180deg,green,white); padding-top:65px;">
+ <nav class="navbar nav mr-5 ml-5 p-3" style="background:linear-gradient(135deg,navy,pink,pink);border-radius:40px;">
+   <div class="logo" ><a href="#"><h3 class="text-white pl-5">Logoo</h3></a></div>
+   <ul class="navbar nav">
+     <li class="nav-iteam"><a href="#" class="nav-link pl-0">home</a></li>
+     <li class="nav-iteam"><a href="#" class="nav-link">about</a></li>
+     <li class="nav-iteam"><a href="#" class="nav-link">products</a></li>
+     <li class="nav-iteam"><a href="#" class="nav-link">login</a></li>
+   </ul>
+ </nav>
+ </section>
+ <section style="height:40vh; width:100%; position: relative;margin-top:30px;">
+   <img src="./web-main/web-main/ban1.jpg" width="100%" height="100%" style="object-fit:cover;">
+  
+ </section>
+ <section>
+   <h1 class="text-danger text-center mt-5">cards</h1>
+   <div class="row pro p-5">
+     <div class="col-md-4 col-xl-4">
+       <div class="card shadow m-auto" style="border-radius:20px;">
+         <img class="card-img-top" src="./web-main/web-main/ban1.jpg" style="border-radius:20px 20px 0px 0px;">
+         <div class="card-body text-center">
+           <h3>man</h3>
+           <p>sryk bfikb ffkks dgjfdhb dhurhbb srynbjo astgbj sryh sryk bfikb ffkks dgjfdhb dhurhbb srynbjo astgbj sryhy</p>
+         </div>
+       </div>
+     </div>
+     
+    <div class="col-md-4 col-xl-4">
+       <div class="card shadow m-auto" style="border-radius:20px;">
+         <img class="card-img-top" src="./web-main/web-main/ban1.jpg" style="border-radius:20px 20px 0px 0px;">
+         <div class="card-body text-center">
+           <h3>man</h3>
+           <p>sryk bfikb ffkks dgjfdhb dhurhbb srynbjo astgbj sryh sryk bfikb ffkks dgjfdhb dhurhbb srynbjo astgbj sryhy</p>
+         </div>
+       </div>
+     </div>
+     
+    <div class="col-md-4 col-xl-4">
+       <div class="card shadow m-auto" style="border-radius:20px;">
+         <img class="card-img-top" src="./web-main/web-main/ban1.jpg" style="border-radius:20px 20px 0px 0px;">
+         <div class="card-body text-center">
+           <h3 class="pl-3">man</h3>
+           <p class="pl-3">sryk bfikb ffkks dgjfdhb dhurhbb srynbjo astgbj sryh sryk bfikb ffkks dgjfdhb dhurhbb srynbjo astgbj sryhy</p>
+         </div>
+       </div>
+     </div>
+  
+   </div>
+ </section>
+ 
+ <section>
+   <div class="row ml-5 mr-5 mb-5">
+     <div class="col-md-4">
+       <div class="procard m-auto shadow" style="">
+         <img src="./web-main/web-main/bg.jpg" style="height:100%;width:100%;border-radius:30px;">
+         <div class="procard-body" style="">
+           <h2>pro series</h2><br>
+           <p>here we create pto card that is very amazing.alse you can try New cards.</p><br>
+           <div class="ml-4">
+           <button class="b">shop now</button>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+     <div class="col-md-4">
+       <div class="procard m-auto shadow" style="">
+         <img src="./web-main/web-main/bg.jpg" style="height:100%;width:100%;border-radius:30px;">
+         <div class="procard-body" style="">
+           <h2>pro series</h2><br>
+           <p>here we create pto card that is very amazing.alse you can try New cards.</p><br>
+           <div class="ml-4">
+           <button class="b">shop now</button>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+          <div class="col-md-4">
+       <div class="procard m-auto shadow" style="">
+         <img src="./web-main/web-main/bg.jpg" style="height:100%;width:100%;border-radius:30px;">
+         <div class="procard-body" style="">
+           <h2>pro series</h2><br>
+           <p>here we create pto card that is very amazing.alse you can try New cards.</p><br>
+           <div class="ml-4">
+           <button class="b">shop now</button>
+           </div>
+         </div>
+       </div>
+     </div>
+     
+     
+   </div>
+ </section>
+<body>
+<script>
+    $(document).ready(function(){
+      
+ $(document).on('mouseover mouseleave','.col-md-4', function(e){
+        if(e.type ==='mouseover'){
+        $(this).animate({
+          marginTop:"-=2%"
+        },500);
+        }
+        else{
+        $(this).animate({
+          marginTop:"0%"
+        },500);
+        }
+      });
+      
+      document.addEventListener('click',()=>{
+        alert('hello');
+      });
+ 
+      
+      $.getJSON("demo_json.json",function(e){
+        console.log("get json "+e);
+      });
+      var req=new XMLHttpRequest();
+      req.onload=function(){
+        product(this);
+      }
+      req.open('GET','demo_json.json',true);
+      req.send();
+    });
+    
+    
+    function product(e){
+      var data=JSON.parse(e.responseText);
+      console.log(data);
+      var display="";
+      data.forEach(function (item,index){
+        display+=` <div class="col-md-4 col-xl-4 pt-5">
+       <div class="card shadow m-auto  " style="border-radius:20px;">
+         <img class="card-img-top" src="${item.img}" style="border-radius:20px 20px 0px 0px;">
+         <div class="card-body text-center">
+           <h3>${item.title}</h3>
+           <p>${item.des}</p>
+         </div>
+       </div>
+     </div>`;
+      });
+      console.log(display);
+      $(".pro").append(display);
+    }
+</script>
+</body>
+</html>

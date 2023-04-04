@@ -1,0 +1,78 @@
+<html>
+  <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script>
+
+$(document).ready (function(){
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onload=function(){
+    data_load(this);
+  }
+  xmlhttp.open('GET','demo_xml.xml',true);
+  xmlhttp.send();
+});
+
+
+function data_load(data){
+  var xml=data.responseXML;
+  console.log(xml);
+  var table=`
+       <table id="t" class="col-10 m-auto p-5 table-bordered text-center table-striped">
+       <thead>
+          <tr>
+            <th>rno</th>
+            <th>name</th>
+            <th>city</th>
+            <th>percentage</th>
+          </tr>
+          </thead>
+          <tbody id="tb">
+          </tbody>
+       </table>
+     `;
+       $("h2").after(table);
+     
+  $(xml).find('stud').each(function(){
+   var rno=$(this).find('rno').text();
+   console.log(rno);
+   display=`
+         <tr>
+             <td>${$(this).find('rno').text()}</td>
+             <td>${$(this).find('name').text()}</td>
+             <td>${$(this).find('city').text()}</td>
+             <td>${$(this).find('per').text()}</td>
+         </tr>`;
+         $("#tb").append(display);
+  });
+  
+  
+}
+</script>
+<style>
+  td,th{
+    padding: 15px;
+  }
+  td{
+    font-size: 1.2rem;
+  }
+  th{
+    font-size: 1.5rem;
+  }
+</style>
+  </head>
+  <body>
+    <h2 class="text-center mt-4 text-warning mb-3" style="Font-family: cursive;">Student result</h2>
+      
+      
+      <div class="container" id="d1">
+        <div class="row mt-5">
+
+        </div>
+      </div>
+   
+  </body>
+</html>
+

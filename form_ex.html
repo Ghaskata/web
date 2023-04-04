@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+     
+   <style>
+     .nav-link{
+       color: black;
+       font-size: 1.3rem;
+       font-family:Courier New;
+     }
+     p{
+       color: #777;
+       font-size: 1.3rem;
+     }
+     .b{
+       background: linear-gradient(45deg,red, blue);
+       padding: 10px 20px;
+       border-radius:15px;
+       color: white;
+       font-size: 1.3rem;
+       border:none;
+     }
+     .procard-body{
+       position: absolute;
+       width:100%;
+       height:100%;
+       background-or:rgba(0,0,0,0.1); 
+       backdrop-filter: blur(5px);
+       border-radius:30px; 
+       top:0; 
+       right:-100%;
+       padding-top:50px;
+       padding-left: 20px;
+       display:flex;
+       flex-direction:column;
+       transition:1s;
+     }
+     .procard:hover .procard-body{
+       right: 0;
+     }
+     .procard{
+       width:90%;height:450px;position:relative;border-radius:30px; overflow:hidden;
+     }
+     label{
+       font-size: 1.2rem;
+     }
+   </style>
+   
+</head>
+<section style="background:linear-gradient(180deg,green,white); padding-top:65px;">
+ <nav class="navbar nav mr-5 ml-5 p-3" style="background:linear-gradient(135deg,navy,pink,pink);border-radius:40px;">
+   <div class="logo" ><a href="#"><h3 class="text-white pl-5">Logoo</h3></a></div>
+   <ul class="navbar nav">
+     <li class="nav-iteam"><a href="#" class="nav-link">home</a></li>
+     <li class="nav-iteam"><a href="#" class="nav-link">about</a></li>
+     <li class="nav-iteam"><a href="#" class="nav-link">products</a></li>
+     <li class="nav-iteam"><a href="#" class="nav-link">login</a></li>
+   </ul>
+ </nav>
+ </section>
+
+<section id="register">
+  <h2 class="text-center mt-4">Register</h2>
+  <div class="col-md-8 m-auto p-5">
+      <form action="data.html" method="get">
+    <div class="form-group">
+      <label for="uname">User Name :  </label>
+      <input type="text" id="uname" class="uname form-control" placeholder="enter name ">
+      <div id="uname_err"></div>
+    </div>
+    <div class="form-group">
+      <label for="lname">last Name :  </label>
+      <input type="text" id="lname" class="lname form-control" placeholder="enter last name ">
+      <div id="lname_err"></div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email :  </label>
+      <input type="email" id="email" class="email form-control" placeholder="abc@gmail.com " required>
+      <div id="email_err"></div>
+    </div>
+        <div class="form-group">
+      <label for="pass">Password :  </label>
+      <input type="password" id="pass" class="pass form-control" placeholder="enter password ">
+      <div id="pass_err"></div>
+    </div>
+    <input type="submit" id="submit" value="submit" class="btn btn-primary mt-3">
+  </form>
+<p class="text-center mt-3">you already have account ? if yes than <a href="#" id="log">Log in<a> here.</p>
+  </div>
+</section>
+<section id="login">
+  <h2 class="text-center mt-4">Login</h2>
+  <div class="col-md-8 m-auto p-5">
+      <form action="data.html" method="get">
+    <div class="form-group">
+      <label for="uname">User Name :  </label>
+      <input type="text" id="uname" class="uname form-control" placeholder="enter name ">
+      <div id="uname_err"></div>
+    </div>
+        <div class="form-group">
+      <label for="pass">Password :  </label>
+      <input type="password" id="pass" class="pass form-control" placeholder="enter password ">
+      <div id="pass_err"></div>
+    </div>
+    <input type="submit" id="submit" value="submit" class="btn btn-primary mt-3">
+  </form>
+  <p class="text-center mt-3">you don't have account ? creat <a href="#" id="new_ac">New Account</a></p>
+  </div>
+</section>
+
+<script>
+    $(document).ready(function(){
+      $("#uname_err").hide();
+      $("#pass_err").hide();
+      
+      var user_error=true;
+      var pass_error=true;
+      
+      $("#uname").keyup(()=>{
+        user_vali();
+      });
+function user_vali(){
+      var uname=$("#uname").val();
+      if(uname.length<3){
+        $("#uname_err").show();
+        $("#uname_err").html('** enter valid Name');
+        $("#uname_err").css("color","red");
+        user_error=false;
+        return false;
+      }
+      else{
+        $("#uname_err").hide();
+      }
+    }
+
+    
+      $("#pass").keyup(()=>{
+        pass_vali();
+      });
+      
+function pass_vali(){
+      var pass=$("#pass").val();
+      if(pass.length<3){
+        $("#pass_err").show();
+        $("#pass_err").html('** enter valid password');
+        $("#pass_err").css("color","red");
+        pass_error=false;
+        return false;
+      }
+      else{
+        $("#pass_err").hide();
+      }
+    }
+      
+      
+      $("#submit").click(function(){
+        user_error=true;
+        pass_error=true;
+        
+        user_vali();
+        pass_vali();
+        
+        if((user_error==true)&&(pass_error==true)){
+        
+         var user=$("#uname").val();
+         var pass=$("#pass").val();
+         sessionStorage.setItem('myobject',JSON.stringify([user,pass]));
+         
+          return true;
+        }
+      
+        return false;
+      });
+      
+      
+      
+      
+      $("#login").fadeOut();
+      $("#log").click(function(){
+        $("#register").fadeOut(200,function(){
+          $("#login").fadeIn(300);
+        });
+      });
+$("#new_ac").click(function(){
+        $("#login").fadeOut(200,function(){
+          $("#register").fadeIn(300);
+        });
+      });
+      
+      
+      
+      
+    });
+    
+    
+
+    
+</script>
+</body>
+</html>
